@@ -28,9 +28,20 @@ app.post('/create',(req,res) => {
     const history= req.body.history;
 
 
+    const sports= req.body.sports;
+    const vArt= req.body.vArt;
+    const wArt= req.body.wArt;
+    const politics= req.body.politics;
+    const tech= req.body.tech;
+    const film= req.body.film;
+    const nature= req.body.nature;
+    const reading= req.body.reading;
+
+
+
 db.query(
-    "INSERT INTO surveys (school,major,interest,mathinterest,scienceinterest,englishinterest,artinterest,historyinterest) VALUES (?,?,?,?,?,?,?,?)",
-    [school,major,interest,math,science,english,art,history],
+    "INSERT INTO surveys (school,major,mathinterest,scienceinterest,englishinterest,artinterest,historyinterest) VALUES (?,?,?,?,?,?,?,?)",
+    [school,major,math,science,english,art,history],
     (err, results) =>{
         if(err){
             console.log(err)
