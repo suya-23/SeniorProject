@@ -80,7 +80,6 @@ function App() {
       group: group,
       independent: independent,
       creative: creative,
-      critical: critical,
       visual: visual,
       kinesthetic: kinesthetic,
       auditory: auditory
@@ -262,7 +261,7 @@ function App() {
           }}
           />
 
-        {/* <h3>How creative are you</h3>
+        <h3>How creative are you</h3>
         <input 
           type="number"
           onChange={(event) =>{
@@ -271,14 +270,7 @@ function App() {
           }}
           />
 
-        <h3>Do you consider yourself to be a critical thinker</h3>
-        <input 
-          type="number"
-          onChange={(event) =>{
-            criticalBinary(event.target.value);
-
-          }}
-          />
+       
 
         <h3>Are u a visual learner</h3>
         <input 
@@ -306,7 +298,7 @@ function App() {
 
           }}
           />
- */}
+ 
 
 
         
