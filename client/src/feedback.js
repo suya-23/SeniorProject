@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
-
-function feedback(){
-    let hist = useHistory();
+import {useState} from 'react';
 
 
-    const[rating, rating] =useState("");
-    const[Comments, Comments] =useState("");
+function Feedback(){
+  let navigate = useNavigate();
+
+
+    const[rating, setrating] =useState("");
+    const[Comments, setComments] =useState("");
 
 const addFeedback = () => {
         Axios.post("http://localhost:3001/create", {
@@ -34,9 +36,9 @@ const addFeedback = () => {
         <input type="radio" value="5" name="star" /> 5
 
         <input type= "textarea" name = "Comments" />
-        <button type="submit" onClick ={() => { hist.push("/")}}>Submit</button>
+        <button type="submit" onClick ={() => { navigate("/")}}>Submit</button>
     </div>
     
     );
 }
-export default feedback;
+export default Feedback;

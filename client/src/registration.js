@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import {useState} from 'react';
 
-function register(){
-    let hist = useHistory();
+function Register(){
+    let navigate = useNavigate();
     
-        const[firstname, firstname] =useState("");
-        const[lastname, lastname] =useState("");
+        const[firstname, setfirstname] =useState("");
+        const[lastname, setlastname] =useState("");
+        const[username, setusername] =useState("");
+        const[password, setpasname] =useState("");
 
     const addUser = () => {
             Axios.post("http://localhost:3001/create", {
@@ -30,9 +33,9 @@ function register(){
             Username:<input type = "text" name = "username" />{"\n"}
             Password:<input type = "text" name = "password" />{"\n"}
             
-            <button type = "button" onClick ={() => { hist.push("/survey")}}>Log in</button>
+            <button type = "button" onClick ={() => { navigate("/survey")}}>Register</button>
             
         </div>
     );
 }
-export default register;
+export default Register;

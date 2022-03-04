@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+
 import Axios from 'axios';
 
-function loggingIn(){
-    let hist = useHistory();
+function LoggingIn(){
+  let navigate = useNavigate();
     
-    const[username, username] =useState("");
-    const[password, password] =useState("");
+    const[username, setusername] =useState("");
+    const[password, setpassword] =useState("");
 
     const login = () => {
     Axios.post("http://localhost:3001/create", {
@@ -30,9 +32,9 @@ function loggingIn(){
             Password: <input type = "text" name = "password" onChange={(event) =>{
             password(event.target.value);
           }} />{"\n"}
-            <button type = "button" onClick ={() => { hist.push("/results")}}>Log in</button>
+            <button type = "button" onClick ={() => { navigate("/results")}}>Log in</button>
             
         </div>
     );
 }
-export default loggingIn;
+export default LoggingIn;
